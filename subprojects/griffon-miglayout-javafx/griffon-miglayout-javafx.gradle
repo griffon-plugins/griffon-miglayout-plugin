@@ -1,0 +1,13 @@
+apply plugin: 'groovy'
+
+apply from: rootProject.file('gradle/code-coverage.gradle')
+apply from: rootProject.file('gradle/javafx.gradle')
+
+dependencies {
+    compileOnly project.files(project.jfxrtLocation)
+
+    compile "com.miglayout:miglayout-core:$miglayoutVersion"
+
+    testRuntime "org.codehaus.griffon:griffon-guice:${griffonVersion}"
+    testRuntime "org.codehaus.griffon:griffon-groovy:${griffonVersion}"
+}

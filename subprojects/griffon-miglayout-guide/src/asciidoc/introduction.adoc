@@ -1,0 +1,7 @@
+
+[[_introduction]]
+= Introduction
+
+{link_miglayout} is a very powerful layout manager for Swing, JavaFX and SWT.
+This plugins enables the usage of toolkit specific versions of MigLayout.
+

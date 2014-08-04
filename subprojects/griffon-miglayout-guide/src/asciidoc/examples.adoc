@@ -1,0 +1,39 @@
+
+[[_examples]]
+= Examples
+
+The following are usage suggestions for each toolkit. Refer to the {link_cheat_sheet}
+to learn more about the different options that can be used with this layout
+
+== Swing Example
+
+[source,groovy,linenums,options="nowrap"]
+----
+application(title: 'Sample', pack:true, locationByPlatform:true,) {
+    migLayout(layoutConstraints: 'fill')
+
+    label 'Username:', constraints: 'left'
+    textField columns: 20, text: bind('username', target: model), constraints: 'wrap'
+    label 'Password:', constraints: 'left'
+    passwordField columns: 20, text: bind('password', target: model), constraints: 'wrap'
+    button loginAction, constraints: 'span 2, right'
+}
+----
+
+== JavaFX Example
+
+[source,groovy,linenums,options="nowrap"]
+----
+application(title: 'Sample', sizeToScene: true, centerOnScreen: true) {
+    scene(fill: WHITE, width: 300, height: 120) {
+        migLayoutPane(layoutConstraints: 'fill') {
+            label 'Username:', constraints: 'left'
+            textField constraints: 'grow, wrap', text: bind(model.username())
+            label 'Password:', constraints: 'left'
+            passwordField constraints: 'grow, wrap', text: bind(model.password())
+            button loginAction, constraints: 'span 2, right'
+        }
+    }
+}
+----
+
