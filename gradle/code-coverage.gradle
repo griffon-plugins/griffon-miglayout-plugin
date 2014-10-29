@@ -1,6 +1,7 @@
-apply plugin: 'cobertura'
+// apply plugin: 'net.saliman.cobertura'
 apply plugin: 'jacoco'
 
+/*
 cobertura {
     coverageFormats = ['html', 'xml']
     if (project.plugins.hasPlugin('groovy')) {
@@ -9,9 +10,10 @@ cobertura {
         coverageSourceDirs = sourceSets.main.java.srcDirs
     }
 }
+*/
 
 jacoco {
-    toolVersion = '0.7.1.201405082137'
+    toolVersion = '0.7.2.201409121644'
 }
 
 jacocoTestReport {
@@ -26,3 +28,5 @@ jacocoTestReport {
         html.enabled = true
     }
 }
+
+jacocoProjects << project

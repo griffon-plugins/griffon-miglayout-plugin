@@ -13,9 +13,9 @@ binding if the wrong type has been applied by the Griffon runtime.
 
 == JavaFX
 
-Module name: +miglayout-javafx-groovy+
+Module name: `miglayout-javafx-groovy`
 
-Depends on: +javafx-groovy+
+Depends on: `javafx-groovy`
 
 [source,java,options="nowrap"]
 ----
@@ -27,14 +27,14 @@ The following nodes will become available on a Groovy View
 [options="2*,header"]
 |===
 | Node          | Type
-| migLayoutPane | +{api_link_miglayoutpane}+
+| migLayoutPane | `{api_link_miglayoutpane}`
 |===
 
 == Swing
 
-Module name: +miglayout-swing-groovy+
+Module name: `miglayout-swing-groovy`
 
-Depends on: +swing-groovy+
+Depends on: `swing-groovy`
 
 [source,java,options="nowrap"]
 ----
@@ -46,7 +46,7 @@ The following nodes will become available on a Groovy View
 [options="2*,header"]
 |===
 | Node      | Type
-| migLayout | +net.miginfocom.swing.MigLayout+
+| migLayout | `net.miginfocom.swing.MigLayout`
 |===
 
 Both `migLayout` and `migLayoutPane` Nodes support the following properties

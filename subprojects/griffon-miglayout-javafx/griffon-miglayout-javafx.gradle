@@ -7,6 +7,7 @@ dependencies {
     compileOnly project.files(project.jfxrtLocation)
 
     compile "com.miglayout:miglayout-core:$miglayoutVersion"
+    compile "com.miglayout:miglayout-javafx:$miglayoutVersion"
 
     testRuntime "org.codehaus.griffon:griffon-guice:${griffonVersion}"
     testRuntime "org.codehaus.griffon:griffon-groovy:${griffonVersion}"

@@ -6,7 +6,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:0.7.3'
+        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.0'
         classpath 'org.gradle.api.plugins:gradle-java2html-plugin:0.4'
     }
 }
@@ -143,11 +143,9 @@ asciidoctor {
             linkcss                 : true,
             stylesheet              : 'css/style.css',
             'source-highlighter'    : 'coderay',
-            'coderay-linenums-mode' : 'inline',
-            'project-name'          : 'Griffon Miglayout Plugin',
+            'coderay-linenums-mode' : 'table',
+            'project-title'         : project.projectDescription,
             'project-author'        : 'Andres Almiray',
-            'project-version'       : project.version,
-            'project-group'         : project.group,
             'project-url'           : project.projectWebsiteUrl,
             'project-vcs'           : project.projectVcsUrl,
             'project-issue-tracker' : project.projectIssueTrackerUrl,
@@ -155,7 +153,7 @@ asciidoctor {
             'miglayout-version'     : rootProject.miglayoutVersion
         ]
     ]
-    sourceDocumentName = project.file('src/asciidoc/index.adoc')
+    sourceDocumentNames = files('src/asciidoc/index.adoc')
 
     doLast { task ->
         copy {

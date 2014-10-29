@@ -37,3 +37,28 @@ application(title: 'Sample', sizeToScene: true, centerOnScreen: true) {
 }
 ----
 
+== FXML Example
+
+[source,groovy,linenums,options="nowrap,verbatim"]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import griffon.javafx.scene.layout.MigLayoutPane?>
+
+<MigLayoutPane xmlns:fx="http://javafx.com/fxml"
+          fx:controller="org.example.SampleController"
+          layout="fill"
+          cols="[label, pref!][grow, 50::]"
+          rows="">
+    <Label text="Username:" MigLayoutPane.cc="left" />
+    <TextField MigLayoutPane.cc="grow, wrap" />
+    <Label text="Password:" MigLayoutPane.cc="left" />
+    <PasswordField MigLayoutPane.cc="grow, wrap" />
+    <Button fx:id="loginActionTarget"
+            mnemonicParsing="false"
+            prefWidth="200.0"
+            text="Login"
+            MigLayoutPane.cc="span 2, right"/>
+</MigLayoutPane>
+----
