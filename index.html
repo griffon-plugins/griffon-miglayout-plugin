@@ -4,27 +4,27 @@
 <meta charset="utf-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.0.preview.7">
+<meta name="generator" content="Asciidoctor 1.5.0">
 <meta name="author" content="Andres Almiray">
 <title>Griffon Miglayout Plugin</title>
 <link rel="stylesheet" href="./css/style.css">
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="./coderay-asciidoctor.css">
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
 <h1>Griffon Miglayout Plugin</h1>
+<div class="details">
 <span id="author" class="author">Andres Almiray</span><br>
-<span id="revnumber">version 1.0.0-SNAPSHOT</span>
+<span id="revnumber">version 1.0.0</span>
+</div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_introduction">1. Introduction</a></li>
-<li><a href="#_configuration">2. Configuration</a></li>
-<li>
+<li><a href="#_configuration">2. Configuration</a>
 <ul class="sectlevel2">
-<li><a href="#_gradle">2.1. Gradle</a></li>
-<li>
+<li><a href="#_gradle">2.1. Gradle</a>
 <ul class="sectlevel3">
 <li><a href="#_automatic">2.1.1. Automatic</a></li>
 <li><a href="#_manual">2.1.2. Manual</a></li>
@@ -33,18 +33,17 @@
 <li><a href="#_maven">2.2. Maven</a></li>
 </ul>
 </li>
-<li><a href="#_modules">3. Modules</a></li>
-<li>
+<li><a href="#_modules">3. Modules</a>
 <ul class="sectlevel2">
 <li><a href="#_javafx">3.1. JavaFX</a></li>
 <li><a href="#_swing">3.2. Swing</a></li>
 </ul>
 </li>
-<li><a href="#_examples">4. Examples</a></li>
-<li>
+<li><a href="#_examples">4. Examples</a>
 <ul class="sectlevel2">
 <li><a href="#_swing_example">4.1. Swing Example</a></li>
 <li><a href="#_javafx_example">4.2. JavaFX Example</a></li>
+<li><a href="#_fxml_example">4.3. FXML Example</a></li>
 </ul>
 </li>
 <li><a href="#_links">5. Links</a></li>
@@ -81,8 +80,8 @@ may include the following snippet in <code>build.gradle</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay nowrap"><code class="groovy language-groovy">dependencies {
-    griffon 'org.codehaus.griffon.plugins:griffon-miglayout-plugin:1.0.0-SNAPSHOT'
+<pre class="CodeRay highlight nowrap"><code data-lang="groovy">dependencies {
+    griffon 'org.codehaus.griffon.plugins:griffon-miglayout-plugin:1.0.0'
 }</code></pre>
 </div>
 </div>
@@ -98,7 +97,7 @@ may include the following snippet in <code>build.gradle</code></p>
 <div class="listingblock">
 <div class="title">Java + Swing</div>
 <div class="content">
-<pre class="CodeRay nowrap"><code class="groovy language-groovy">dependencies {
+<pre class="CodeRay highlight nowrap"><code data-lang="groovy">dependencies {
     compile 'com.miglayout:miglayout-swing:4.2'
 }</code></pre>
 </div>
@@ -106,24 +105,24 @@ may include the following snippet in <code>build.gradle</code></p>
 <div class="listingblock">
 <div class="title">Java + JavaFX</div>
 <div class="content">
-<pre class="CodeRay nowrap"><code class="groovy language-groovy">dependencies {
-    compile 'org.codehaus.griffon.plugins:griffon-miglayout-javafx:1.0.0-SNAPSHOT'
+<pre class="CodeRay highlight nowrap"><code data-lang="groovy">dependencies {
+    compile 'org.codehaus.griffon.plugins:griffon-miglayout-javafx:1.0.0'
 }</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Groovy + Swing</div>
 <div class="content">
-<pre class="CodeRay nowrap"><code class="groovy language-groovy">dependencies {
-    compile 'org.codehaus.griffon.plugins:griffon-miglayout-swing-groovy:1.0.0-SNAPSHOT'
+<pre class="CodeRay highlight nowrap"><code data-lang="groovy">dependencies {
+    compile 'org.codehaus.griffon.plugins:griffon-miglayout-swing-groovy:1.0.0'
 }</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Groovy + JavaFX</div>
 <div class="content">
-<pre class="CodeRay nowrap"><code class="groovy language-groovy">dependencies {
-    compile 'org.codehaus.griffon.plugins:griffon-miglayout-javafx-groovy:1.0.0-SNAPSHOT'
+<pre class="CodeRay highlight nowrap"><code data-lang="groovy">dependencies {
+    compile 'org.codehaus.griffon.plugins:griffon-miglayout-javafx-groovy:1.0.0'
 }</code></pre>
 </div>
 </div>
@@ -137,12 +136,12 @@ snippet before the <code>&lt;build&gt;</code> element</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay nowrap"><code class="xml language-xml"><span class="tag">&lt;dependencyManagement&gt;</span>
+<pre class="CodeRay highlight nowrap"><code data-lang="xml"><span class="tag">&lt;dependencyManagement&gt;</span>
     <span class="tag">&lt;dependencies&gt;</span>
         <span class="tag">&lt;dependency&gt;</span>
             <span class="tag">&lt;groupId&gt;</span>org.codehaus.griffon.plugins<span class="tag">&lt;/groupId&gt;</span>
             <span class="tag">&lt;artifactId&gt;</span>griffon-miglayout-plugin<span class="tag">&lt;/artifactId&gt;</span>
-            <span class="tag">&lt;version&gt;</span>1.0.0-SNAPSHOT<span class="tag">&lt;/version&gt;</span>
+            <span class="tag">&lt;version&gt;</span>1.0.0<span class="tag">&lt;/version&gt;</span>
             <span class="tag">&lt;type&gt;</span>pom<span class="tag">&lt;/type&gt;</span>
             <span class="tag">&lt;scope&gt;</span>import<span class="tag">&lt;/scope&gt;</span>
         <span class="tag">&lt;/dependency&gt;</span>
@@ -156,7 +155,7 @@ snippet before the <code>&lt;build&gt;</code> element</p>
 <div class="listingblock">
 <div class="title">Java + Swing</div>
 <div class="content">
-<pre class="CodeRay nowrap"><code class="xml language-xml"><span class="tag">&lt;dependency&gt;</span>
+<pre class="CodeRay highlight nowrap"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>com.miglayout<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>miglayout-swing<span class="tag">&lt;/artifactId&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
@@ -165,7 +164,7 @@ snippet before the <code>&lt;build&gt;</code> element</p>
 <div class="listingblock">
 <div class="title">Java + JavaFX</div>
 <div class="content">
-<pre class="CodeRay nowrap"><code class="xml language-xml"><span class="tag">&lt;dependency&gt;</span>
+<pre class="CodeRay highlight nowrap"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.codehaus.griffon.plugins<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>griffon-miglayout-javafx<span class="tag">&lt;/artifactId&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
@@ -174,7 +173,7 @@ snippet before the <code>&lt;build&gt;</code> element</p>
 <div class="listingblock">
 <div class="title">Groovy + Swing</div>
 <div class="content">
-<pre class="CodeRay nowrap"><code class="xml language-xml"><span class="tag">&lt;dependency&gt;</span>
+<pre class="CodeRay highlight nowrap"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.codehaus.griffon.plugins<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>griffon-miglayout-swing-groovy<span class="tag">&lt;/artifactId&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
@@ -183,7 +182,7 @@ snippet before the <code>&lt;build&gt;</code> element</p>
 <div class="listingblock">
 <div class="title">Groovy + JavaFX</div>
 <div class="content">
-<pre class="CodeRay nowrap"><code class="xml language-xml"><span class="tag">&lt;dependency&gt;</span>
+<pre class="CodeRay highlight nowrap"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.codehaus.griffon.plugins<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>griffon-miglayout-javafx-groovy<span class="tag">&lt;/artifactId&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
@@ -210,7 +209,7 @@ binding if the wrong type has been applied by the Griffon runtime.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay nowrap"><code class="java language-java">bind(BuilderCustomizer.class)
+<pre class="CodeRay highlight nowrap"><code data-lang="java">bind(BuilderCustomizer.class)
     .to(MiglayoutJavaFXBuilderCustomizer.class)
     .asSingleton();</code></pre>
 </div>
@@ -218,7 +217,7 @@ binding if the wrong type has been applied by the Griffon runtime.</p>
 <div class="paragraph">
 <p>The following nodes will become available on a Groovy View</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 100%;">
+<table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -247,7 +246,7 @@ binding if the wrong type has been applied by the Griffon runtime.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay nowrap"><code class="java language-java">bind(BuilderCustomizer.class)
+<pre class="CodeRay highlight nowrap"><code data-lang="java">bind(BuilderCustomizer.class)
     .to(MiglayoutSwingBuilderCustomizer.class)
     .asSingleton();</code></pre>
 </div>
@@ -255,7 +254,7 @@ binding if the wrong type has been applied by the Griffon runtime.</p>
 <div class="paragraph">
 <p>The following nodes will become available on a Groovy View</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 100%;">
+<table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -306,15 +305,27 @@ to learn more about the different options that can be used with this layout</p>
 <h3 id="_swing_example"><a class="anchor" href="#_swing_example"></a>4.1. Swing Example</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay nowrap"><code class="groovy language-groovy"><span class="line-numbers"> 1</span>application(<span class="key">title</span>: <span class="string"><span class="delimiter">'</span><span class="content">Sample</span><span class="delimiter">'</span></span>, <span class="key">pack</span>:<span class="predefined-constant">true</span>, <span class="key">locationByPlatform</span>:<span class="predefined-constant">true</span>,) {
-<span class="line-numbers"> 2</span>    migLayout(<span class="key">layoutConstraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">fill</span><span class="delimiter">'</span></span>)
-<span class="line-numbers"> 3</span>
-<span class="line-numbers"> 4</span>    label <span class="string"><span class="delimiter">'</span><span class="content">Username:</span><span class="delimiter">'</span></span>, <span class="key">constraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">left</span><span class="delimiter">'</span></span>
-<span class="line-numbers"> 5</span>    textField <span class="key">columns</span>: <span class="integer">20</span>, <span class="key">text</span>: bind(<span class="string"><span class="delimiter">'</span><span class="content">username</span><span class="delimiter">'</span></span>, <span class="key">target</span>: model), <span class="key">constraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">wrap</span><span class="delimiter">'</span></span>
-<span class="line-numbers"> 6</span>    label <span class="string"><span class="delimiter">'</span><span class="content">Password:</span><span class="delimiter">'</span></span>, <span class="key">constraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">left</span><span class="delimiter">'</span></span>
-<span class="line-numbers"> 7</span>    passwordField <span class="key">columns</span>: <span class="integer">20</span>, <span class="key">text</span>: bind(<span class="string"><span class="delimiter">'</span><span class="content">password</span><span class="delimiter">'</span></span>, <span class="key">target</span>: model), <span class="key">constraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">wrap</span><span class="delimiter">'</span></span>
-<span class="line-numbers"> 8</span>    button loginAction, <span class="key">constraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">span 2, right</span><span class="delimiter">'</span></span>
-<span class="line-numbers"> 9</span>}</code></pre>
+<pre class="CodeRay highlight nowrap"><code data-lang="groovy"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td>
+  <td class="code"><pre>application(<span class="key">title</span>: <span class="string"><span class="delimiter">'</span><span class="content">Sample</span><span class="delimiter">'</span></span>, <span class="key">pack</span>:<span class="predefined-constant">true</span>, <span class="key">locationByPlatform</span>:<span class="predefined-constant">true</span>,) {
+    migLayout(<span class="key">layoutConstraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">fill</span><span class="delimiter">'</span></span>)
+
+    label <span class="string"><span class="delimiter">'</span><span class="content">Username:</span><span class="delimiter">'</span></span>, <span class="key">constraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">left</span><span class="delimiter">'</span></span>
+    textField <span class="key">columns</span>: <span class="integer">20</span>, <span class="key">text</span>: bind(<span class="string"><span class="delimiter">'</span><span class="content">username</span><span class="delimiter">'</span></span>, <span class="key">target</span>: model), <span class="key">constraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">wrap</span><span class="delimiter">'</span></span>
+    label <span class="string"><span class="delimiter">'</span><span class="content">Password:</span><span class="delimiter">'</span></span>, <span class="key">constraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">left</span><span class="delimiter">'</span></span>
+    passwordField <span class="key">columns</span>: <span class="integer">20</span>, <span class="key">text</span>: bind(<span class="string"><span class="delimiter">'</span><span class="content">password</span><span class="delimiter">'</span></span>, <span class="key">target</span>: model), <span class="key">constraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">wrap</span><span class="delimiter">'</span></span>
+    button loginAction, <span class="key">constraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">span 2, right</span><span class="delimiter">'</span></span>
+}</pre></td>
+</tr></table></code></pre>
 </div>
 </div>
 </div>
@@ -322,17 +333,81 @@ to learn more about the different options that can be used with this layout</p>
 <h3 id="_javafx_example"><a class="anchor" href="#_javafx_example"></a>4.2. JavaFX Example</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay nowrap"><code class="groovy language-groovy"><span class="line-numbers"> 1</span>application(<span class="key">title</span>: <span class="string"><span class="delimiter">'</span><span class="content">Sample</span><span class="delimiter">'</span></span>, <span class="key">sizeToScene</span>: <span class="predefined-constant">true</span>, <span class="key">centerOnScreen</span>: <span class="predefined-constant">true</span>) {
-<span class="line-numbers"> 2</span>    scene(<span class="key">fill</span>: WHITE, <span class="key">width</span>: <span class="integer">300</span>, <span class="key">height</span>: <span class="integer">120</span>) {
-<span class="line-numbers"> 3</span>        migLayoutPane(<span class="key">layoutConstraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">fill</span><span class="delimiter">'</span></span>) {
-<span class="line-numbers"> 4</span>            label <span class="string"><span class="delimiter">'</span><span class="content">Username:</span><span class="delimiter">'</span></span>, <span class="key">constraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">left</span><span class="delimiter">'</span></span>
-<span class="line-numbers"> 5</span>            textField <span class="key">constraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">grow, wrap</span><span class="delimiter">'</span></span>, <span class="key">text</span>: bind(model.username())
-<span class="line-numbers"> 6</span>            label <span class="string"><span class="delimiter">'</span><span class="content">Password:</span><span class="delimiter">'</span></span>, <span class="key">constraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">left</span><span class="delimiter">'</span></span>
-<span class="line-numbers"> 7</span>            passwordField <span class="key">constraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">grow, wrap</span><span class="delimiter">'</span></span>, <span class="key">text</span>: bind(model.password())
-<span class="line-numbers"> 8</span>            button loginAction, <span class="key">constraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">span 2, right</span><span class="delimiter">'</span></span>
-<span class="line-numbers"> 9</span>        }
-<span class="line-numbers"><strong>10</strong></span>    }
-<span class="line-numbers">11</span>}</code></pre>
+<pre class="CodeRay highlight nowrap"><code data-lang="groovy"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+</pre></td>
+  <td class="code"><pre>application(<span class="key">title</span>: <span class="string"><span class="delimiter">'</span><span class="content">Sample</span><span class="delimiter">'</span></span>, <span class="key">sizeToScene</span>: <span class="predefined-constant">true</span>, <span class="key">centerOnScreen</span>: <span class="predefined-constant">true</span>) {
+    scene(<span class="key">fill</span>: WHITE, <span class="key">width</span>: <span class="integer">300</span>, <span class="key">height</span>: <span class="integer">120</span>) {
+        migLayoutPane(<span class="key">layoutConstraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">fill</span><span class="delimiter">'</span></span>) {
+            label <span class="string"><span class="delimiter">'</span><span class="content">Username:</span><span class="delimiter">'</span></span>, <span class="key">constraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">left</span><span class="delimiter">'</span></span>
+            textField <span class="key">constraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">grow, wrap</span><span class="delimiter">'</span></span>, <span class="key">text</span>: bind(model.username())
+            label <span class="string"><span class="delimiter">'</span><span class="content">Password:</span><span class="delimiter">'</span></span>, <span class="key">constraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">left</span><span class="delimiter">'</span></span>
+            passwordField <span class="key">constraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">grow, wrap</span><span class="delimiter">'</span></span>, <span class="key">text</span>: bind(model.password())
+            button loginAction, <span class="key">constraints</span>: <span class="string"><span class="delimiter">'</span><span class="content">span 2, right</span><span class="delimiter">'</span></span>
+        }
+    }
+}</pre></td>
+</tr></table></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_fxml_example"><a class="anchor" href="#_fxml_example"></a>4.3. FXML Example</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight nowrap"><code data-lang="groovy"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+</pre></td>
+  <td class="code"><pre>&lt;?xml version=<span class="string"><span class="delimiter">&quot;</span><span class="content">1.0</span><span class="delimiter">&quot;</span></span> encoding=<span class="string"><span class="delimiter">&quot;</span><span class="content">UTF-8</span><span class="delimiter">&quot;</span></span>?&gt;
+
+&lt;?<span class="keyword">import</span> <span class="include">javafx.scene.control.*</span>?&gt;
+&lt;?<span class="keyword">import</span> <span class="include">griffon.javafx.scene.layout.MigLayoutPane</span>?&gt;
+
+&lt;MigLayoutPane <span class="key">xmlns</span>:fx=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://javafx.com/fxml</span><span class="delimiter">&quot;</span></span>
+          <span class="key">fx</span>:controller=<span class="string"><span class="delimiter">&quot;</span><span class="content">org.example.SampleController</span><span class="delimiter">&quot;</span></span>
+          layout=<span class="string"><span class="delimiter">&quot;</span><span class="content">fill</span><span class="delimiter">&quot;</span></span>
+          cols=<span class="string"><span class="delimiter">&quot;</span><span class="content">[label, pref!][grow, 50::]</span><span class="delimiter">&quot;</span></span>
+          rows=<span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>&gt;
+    &lt;<span class="predefined-type">Label</span> text=<span class="string"><span class="delimiter">&quot;</span><span class="content">Username:</span><span class="delimiter">&quot;</span></span> MigLayoutPane.cc=<span class="string"><span class="delimiter">&quot;</span><span class="content">left</span><span class="delimiter">&quot;</span></span> /&gt;
+    &lt;<span class="predefined-type">TextField</span> MigLayoutPane.cc=<span class="string"><span class="delimiter">&quot;</span><span class="content">grow, wrap</span><span class="delimiter">&quot;</span></span> /&gt;
+    &lt;<span class="predefined-type">Label</span> text=<span class="string"><span class="delimiter">&quot;</span><span class="content">Password:</span><span class="delimiter">&quot;</span></span> MigLayoutPane.cc=<span class="string"><span class="delimiter">&quot;</span><span class="content">left</span><span class="delimiter">&quot;</span></span> /&gt;
+    &lt;PasswordField MigLayoutPane.cc=<span class="string"><span class="delimiter">&quot;</span><span class="content">grow, wrap</span><span class="delimiter">&quot;</span></span> /&gt;
+    &lt;<span class="predefined-type">Button</span> <span class="key">fx</span>:id=<span class="string"><span class="delimiter">&quot;</span><span class="content">loginActionTarget</span><span class="delimiter">&quot;</span></span>
+            mnemonicParsing=<span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span>
+            prefWidth=<span class="string"><span class="delimiter">&quot;</span><span class="content">200.0</span><span class="delimiter">&quot;</span></span>
+            text=<span class="string"><span class="delimiter">&quot;</span><span class="content">Login</span><span class="delimiter">&quot;</span></span>
+            MigLayoutPane.cc=<span class="string"><span class="delimiter">&quot;</span><span class="content">span 2, right</span><span class="delimiter">&quot;</span></span>/&gt;
+&lt;<span class="regexp"><span class="delimiter">/</span><span class="content">MigLayoutPane&gt;</span></span></pre></td>
+</tr></table></code></pre>
 </div>
 </div>
 </div>
@@ -352,8 +427,8 @@ to learn more about the different options that can be used with this layout</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.0.0-SNAPSHOT<br>
-Last updated 2014-08-04 16:40:58 CEST
+Version 1.0.0<br>
+Last updated 2014-10-29 17:04:15 CET
 </div>
 </div>
 </body>
