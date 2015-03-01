@@ -107,8 +107,7 @@ public class MigLayoutPane extends MigPane {
      * called from the subnodes in FXML via MigPane.cc="..."
      */
     public static void setCc(Node node, CC cc) {
-        // temporarily put it in a map
-        cNodeToCC.put(node, cc);
+        node.getProperties().put(FXML_CC_KEY, cc);
     }
 
     public static void setCc(Node node, String cc) {
