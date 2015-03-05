@@ -15,14 +15,17 @@
  */
 package griffon.builder.javafx;
 
-import griffon.inject.DependsOn;
 import griffon.builder.javafx.factory.MigLayoutPaneFactory;
+import griffon.inject.DependsOn;
 import groovy.util.Factory;
 import org.codehaus.griffon.runtime.groovy.view.AbstractBuilderCustomizer;
 
 import javax.inject.Named;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Map;
+
+import static griffon.builder.javafx.factory.MigLayoutPaneFactory.constraintsAttributeDelegate;
 
 /**
  * @author Andres Almiray
@@ -34,5 +37,6 @@ public class MiglayoutJavaFXBuilderCustomizer extends AbstractBuilderCustomizer 
         Map<String, Factory> factories = new LinkedHashMap<>();
         factories.put("migLayoutPane", new MigLayoutPaneFactory());
         setFactories(factories);
+        setAttributeDelegates(Arrays.asList(constraintsAttributeDelegate()));
     }
 }

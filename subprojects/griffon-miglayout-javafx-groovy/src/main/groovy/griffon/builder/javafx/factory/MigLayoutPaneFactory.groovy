@@ -51,10 +51,12 @@ class MigLayoutPaneFactory extends AbstractNodeFactory {
         }
     }
 
-    static void constraintsAttributeDelegate(FactoryBuilderSupport builder, node, Map attributes) {
-        String constraintsAttr = builder?.context?.getAt(DELEGATE_PROPERTY_CONSTRAINT) ?: DEFAULT_DELEGATE_PROPERTY_CONSTRAINT
-        if (attributes.containsKey(constraintsAttr)) {
-            builder.context.constraints = attributes.remove(constraintsAttr)
+    static Closure constraintsAttributeDelegate() {
+        return { FactoryBuilderSupport builder, node, Map attributes ->
+            String constraintsAttr = builder?.context?.getAt(DELEGATE_PROPERTY_CONSTRAINT) ?: DEFAULT_DELEGATE_PROPERTY_CONSTRAINT
+            if (attributes.containsKey(constraintsAttr)) {
+                builder.context.constraints = attributes.remove(constraintsAttr)
+            }
         }
     }
 }
