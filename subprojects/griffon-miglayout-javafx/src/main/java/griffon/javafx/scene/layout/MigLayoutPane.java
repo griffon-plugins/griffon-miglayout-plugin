@@ -23,6 +23,10 @@ import net.miginfocom.layout.ConstraintParser;
 import net.miginfocom.layout.LC;
 import org.tbee.javafx.scene.layout.MigPane;
 
+import static net.miginfocom.layout.ConstraintParser.parseColumnConstraints;
+import static net.miginfocom.layout.ConstraintParser.parseLayoutConstraint;
+import static net.miginfocom.layout.ConstraintParser.parseRowConstraints;
+
 /**
  * MigLayout container for JavaFX.<br/>
  * Based on {@code org.tbee.javafx.scene.layout.MigPane} originally from Tom Eugelink.
@@ -59,6 +63,20 @@ public class MigLayoutPane extends MigPane {
     }
 
     // ============================================================================================================
+
+    public void setLayoutConstraints(String value) {
+        setLayout(value);
+    }
+
+    public void setColumnConstraints(String value) {
+        setCols(value);
+    }
+
+    public void setRowConstraints(String value) {
+        setRows(value);
+    }
+
+    // ============================================================================================================
     // FXML Integration
 
     /**
@@ -66,7 +84,7 @@ public class MigLayoutPane extends MigPane {
      */
     public void setLayout(String value) {
         this.fxmLayoutConstraints = value;
-        setLayoutConstraints(ConstraintParser.parseLayoutConstraint(ConstraintParser.prepare(value)));
+        setLayoutConstraints(parseLayoutConstraint(ConstraintParser.prepare(value)));
     }
 
     public String getLayout() {
@@ -80,7 +98,7 @@ public class MigLayoutPane extends MigPane {
      */
     public void setCols(String value) {
         this.fxmlColumConstraints = value;
-        setColumnConstraints(ConstraintParser.parseColumnConstraints(ConstraintParser.prepare(value)));
+        setColumnConstraints(parseColumnConstraints(ConstraintParser.prepare(value)));
     }
 
     public String getCols() {
@@ -94,7 +112,7 @@ public class MigLayoutPane extends MigPane {
      */
     public void setRows(String value) {
         this.fxmlRowConstraints = value;
-        setRowConstraints(ConstraintParser.parseRowConstraints(ConstraintParser.prepare(value)));
+        setRowConstraints(parseRowConstraints(ConstraintParser.prepare(value)));
     }
 
     public String getRows() {
