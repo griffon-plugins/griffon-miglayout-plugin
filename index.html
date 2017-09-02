@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.2">
+<meta name="generator" content="Asciidoctor 1.5.3">
 <meta name="author" content="Andres Almiray">
 <title>Griffon Miglayout Plugin</title>
 <link rel="stylesheet" href="./css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="./coderay-asciidoctor.css">
 </head>
 <body class="book toc2 toc-left">
@@ -16,7 +16,7 @@
 <h1>Griffon Miglayout Plugin</h1>
 <div class="details">
 <span id="author" class="author">Andres Almiray</span><br>
-<span id="revnumber">version 1.1.1</span>
+<span id="revnumber">version 2.0.0</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -59,7 +59,7 @@
 This plugins enables the usage of toolkit specific versions of MigLayout.</p>
 </div>
 <div class="paragraph">
-<p>Griffon version: 2.2.0</p>
+<p>Griffon version: 2.12.0</p>
 </div>
 </div>
 </div>
@@ -84,7 +84,7 @@ may include the following snippet in <code>build.gradle</code></p>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight nowrap"><code data-lang="groovy">dependencies {
-    griffon 'org.codehaus.griffon.plugins:griffon-miglayout-plugin:1.1.1'
+    griffon 'org.codehaus.griffon.plugins:griffon-miglayout-plugin:2.0.0'
 }</code></pre>
 </div>
 </div>
@@ -109,7 +109,7 @@ may include the following snippet in <code>build.gradle</code></p>
 <div class="title">Java + JavaFX</div>
 <div class="content">
 <pre class="CodeRay highlight nowrap"><code data-lang="groovy">dependencies {
-    compile 'org.codehaus.griffon.plugins:griffon-miglayout-javafx:1.1.1'
+    compile 'org.codehaus.griffon.plugins:griffon-miglayout-javafx:2.0.0'
 }</code></pre>
 </div>
 </div>
@@ -117,7 +117,7 @@ may include the following snippet in <code>build.gradle</code></p>
 <div class="title">Groovy + Swing</div>
 <div class="content">
 <pre class="CodeRay highlight nowrap"><code data-lang="groovy">dependencies {
-    compile 'org.codehaus.griffon.plugins:griffon-miglayout-swing-groovy:1.1.1'
+    compile 'org.codehaus.griffon.plugins:griffon-miglayout-swing-groovy:2.0.0'
 }</code></pre>
 </div>
 </div>
@@ -125,7 +125,7 @@ may include the following snippet in <code>build.gradle</code></p>
 <div class="title">Groovy + JavaFX</div>
 <div class="content">
 <pre class="CodeRay highlight nowrap"><code data-lang="groovy">dependencies {
-    compile 'org.codehaus.griffon.plugins:griffon-miglayout-javafx-groovy:1.1.1'
+    compile 'org.codehaus.griffon.plugins:griffon-miglayout-javafx-groovy:2.0.0'
 }</code></pre>
 </div>
 </div>
@@ -144,7 +144,7 @@ snippet before the <code>&lt;build&gt;</code> element</p>
         <span class="tag">&lt;dependency&gt;</span>
             <span class="tag">&lt;groupId&gt;</span>org.codehaus.griffon.plugins<span class="tag">&lt;/groupId&gt;</span>
             <span class="tag">&lt;artifactId&gt;</span>griffon-miglayout-plugin<span class="tag">&lt;/artifactId&gt;</span>
-            <span class="tag">&lt;version&gt;</span>1.1.1<span class="tag">&lt;/version&gt;</span>
+            <span class="tag">&lt;version&gt;</span>2.0.0<span class="tag">&lt;/version&gt;</span>
             <span class="tag">&lt;type&gt;</span>pom<span class="tag">&lt;/type&gt;</span>
             <span class="tag">&lt;scope&gt;</span>import<span class="tag">&lt;/scope&gt;</span>
         <span class="tag">&lt;/dependency&gt;</span>
@@ -346,7 +346,7 @@ to learn more about the different options that can be used with this layout</p>
 7
 8
 9
-<strong>10</strong>
+10
 11
 </pre></td>
   <td class="code"><pre>application(<span class="key">title</span>: <span class="string"><span class="delimiter">'</span><span class="content">Sample</span><span class="delimiter">'</span></span>, <span class="key">sizeToScene</span>: <span class="predefined-constant">true</span>, <span class="key">centerOnScreen</span>: <span class="predefined-constant">true</span>) {
@@ -378,7 +378,7 @@ to learn more about the different options that can be used with this layout</p>
 7
 8
 9
-<strong>10</strong>
+10
 11
 12
 13
@@ -388,7 +388,7 @@ to learn more about the different options that can be used with this layout</p>
 17
 18
 19
-<strong>20</strong>
+20
 </pre></td>
   <td class="code"><pre>&lt;?xml version=<span class="string"><span class="delimiter">&quot;</span><span class="content">1.0</span><span class="delimiter">&quot;</span></span> encoding=<span class="string"><span class="delimiter">&quot;</span><span class="content">UTF-8</span><span class="delimiter">&quot;</span></span>?&gt;
 
@@ -430,8 +430,8 @@ to learn more about the different options that can be used with this layout</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.1.1<br>
-Last updated 2014-10-29 17:04:53 CET
+Version 2.0.0<br>
+Last updated 2014-10-29 17:04:53 +01:00
 </div>
 </div>
 </body>
