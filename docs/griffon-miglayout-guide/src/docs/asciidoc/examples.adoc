@@ -44,7 +44,7 @@ application(title: 'Sample', sizeToScene: true, centerOnScreen: true) {
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import griffon.javafx.scene.layout.MigLayoutPane?>
+<?import griffon.javafx.scene.layout.miglayout.MigLayoutPane?>
 
 <MigLayoutPane xmlns:fx="http://javafx.com/fxml"
           fx:controller="org.example.SampleController"

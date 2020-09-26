@@ -1,5 +1,5 @@
 
 :link_miglayout: link:http://miglayout.com[MigLayout, window="_blank"]
-:api_link_miglayoutpane: link:api/griffon/javafx/scene/layout/MigLayoutPane.html[griffon.javafx.scene.layout.MigLayoutPane, window="_blank"]
+:api_link_miglayoutpane: link:api/griffon/javafx/scene/layout/MigLayoutPane.html[griffon.javafx.scene.layout.miglayout.MigLayoutPane, window="_blank"]
 :link_cheat_sheet: link:http://www.migcalendar.com/miglayout/mavensite/docs/cheatsheet.html[MigLayout Cheat Sheet, window="_blank"]
 

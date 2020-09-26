@@ -1,7 +1,7 @@
 = {project-title}
 :author: {project-author}
 :revnumber: {project-version}
-:toclevels: 10
+:toclevels: 3
 
 include::_links.adoc[]
 
@@ -13,6 +13,6 @@ include::examples.adoc[]
 
 = Links
 
-link:api/index.html[Javadoc]
+link:api/index.html[Javadoc, window="_blank"]
 
-link:api-src/index.html[API Sources]
+link:api-src/index.html[API Sources, window="_blank"]

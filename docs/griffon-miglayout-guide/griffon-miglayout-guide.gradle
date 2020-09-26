@@ -15,7 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-dependencies {
-    compile "com.miglayout:miglayout-swing:$miglayoutVersion"
-    compile "org.codehaus.griffon:griffon-swing-groovy:$griffonVersion"
-}
+ext.projectDependencies = [
+    ':griffon-miglayout-javafx',
+    ':griffon-miglayout-javafx-groovy',
+    ':griffon-miglayout-swing-groovy'
+]
+
+ext.projectDependencies.each { evaluationDependsOn it }

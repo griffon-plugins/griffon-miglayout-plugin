@@ -33,7 +33,7 @@ You will need to configure any of the following blocks depending on your setup
 [subs="attributes"]
 ----
 dependencies {
-    compile 'com.miglayout:miglayout-swing:{miglayout-version}'
+    api 'com.miglayout:miglayout-swing:{miglayout-version}'
 }
 ----
 
@@ -42,7 +42,7 @@ dependencies {
 [subs="attributes"]
 ----
 dependencies {
-    compile '{project-group}:griffon-miglayout-javafx:{project-version}'
+    api '{project-group}:griffon-miglayout-javafx:{project-version}'
 }
 ----
 
@@ -51,7 +51,7 @@ dependencies {
 [subs="attributes"]
 ----
 dependencies {
-    compile '{project-group}:griffon-miglayout-swing-groovy:{project-version}'
+    api '{project-group}:griffon-miglayout-swing-groovy:{project-version}'
 }
 ----
 
@@ -60,7 +60,7 @@ dependencies {
 [subs="attributes"]
 ----
 dependencies {
-    compile '{project-group}:griffon-miglayout-javafx-groovy:{project-version}'
+    api '{project-group}:griffon-miglayout-javafx-groovy:{project-version}'
 }
 ----
 

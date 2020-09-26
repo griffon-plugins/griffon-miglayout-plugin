@@ -1,17 +1,31 @@
 language: java
 
-install:
-    - TERM=dumb ./gradlew -q assemble
+dist: trusty
 
-script:
-    - TERM=dumb ./gradlew build jacocoTestReport jacocoRootReport
+jdk: oraclejdk8
 
-jdk:
-    - oraclejdk8
+install: true
 
 before_install:
-    - export DISPLAY=:99.0
-    - sh -e /etc/init.d/xvfb start
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sleep 3
+
+before_cache:
+    - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+
+cache:
+    directories:
+        - $HOME/.m2/
+        - $HOME/.gradle/caches/
+        - $HOME/.gradle/wrapper/
+
+before_script:
+    - ./gradlew --version
+
+script: ./gradlew build -S
+
+env: TERM=dumb
 
 after_success:
-    ./gradlew coveralls
+    - ./gradlew coveralls
